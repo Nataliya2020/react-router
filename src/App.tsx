@@ -1,14 +1,14 @@
-import './App.css';
+import './styles/App.css';
 import {Route, Routes} from 'react-router-dom';
-import HomePage from './pages/HomePage';
+import HomePage from './pages/homePage';
 import {Navigation} from './components/Navigation/Navigation.tsx';
-import ListCharactersPage from './pages/characters/listCharactersPage';
-import ListLocationsPage from './pages/locations/listLocationsPage';
-import ListEpisodesPage from './pages/episodes/listEpisodesPage';
-import DetailCharacterPage from './pages/characters/detailCharacterPage';
-import NotFoundPage from './pages/NotFound';
-import DetailEpisodePage from './pages/episodes/detailEpisodePage';
-import DetailLocationPage from './pages/locations/detailLocationPage';
+import ListCharactersPage from './pages/characters';
+import ListLocationsPage from './pages/locations';
+import ListEpisodesPage from './pages/episodes';
+import DetailCharacterPage from './pages/characters/[id]]';
+import {NotFound} from './pages/notFound';
+import DetailEpisodePage from './pages/episodes/[id]';
+import DetailLocationPage from './pages/locations/[id]';
 
 function App() {
   return (
@@ -23,7 +23,7 @@ function App() {
           <Route path="/characters/:id" element={<DetailCharacterPage/>}/>
           <Route path="/locations/:id" element={<DetailLocationPage/>}/>
           <Route path="/episodes/:id" element={<DetailEpisodePage/>}/>
-          <Route path="*" element={<NotFoundPage/>}/>
+          <Route path="*" element={<NotFound/>}/>
         </Routes>
       </main>
     </>

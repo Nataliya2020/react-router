@@ -1,10 +1,10 @@
 import type {Character} from '../../../core/interfaces/interfaces.ts';
 import CharacterDetaile from "../../../components/CharacterDetaile";
 import characters from "../../../data/characters/characters.json";
-import NotFoundPage from "../../NotFound";
+import {NotFound} from "../../notFound";
 import {useParams} from "react-router-dom";
 
-export const DetailCharacterPage = () => {
+export const DetaileCharacter = () => {
   const params = useParams();
   const characterItem: Character | undefined = characters.find((character) => character.id === Number(params.id));
 
@@ -15,6 +15,6 @@ export const DetailCharacterPage = () => {
       </div>
     )
   } else {
-    return <NotFoundPage/>;
+    return <NotFound/>;
   }
 };

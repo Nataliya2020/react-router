@@ -1,10 +1,10 @@
 import {useParams} from 'react-router-dom';
 import type {Episode} from '../../../core/interfaces/interfaces.ts';
 import episode from '../../../data/episode/episode.json';
-import NotFoundPage from "../../NotFound";
+import {NotFound }from "../../notFound";
 import EpisodeDetaile from "../../../components/EpisodeDetaile";
 
-export const DetailEpisodePage = () => {
+export const DetaileEpisode = () => {
   const params = useParams();
   const episodeItem: Episode | undefined = episode.find((episode) => episode.id === Number(params.id));
 
@@ -15,6 +15,6 @@ export const DetailEpisodePage = () => {
       </div>
     )
   } else {
-    return <NotFoundPage/>;
+    return <NotFound/>;
   }
 }
